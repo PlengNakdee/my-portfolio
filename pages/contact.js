@@ -1,12 +1,12 @@
-import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-function projects() {
+function contact() {
   return (
     <div className="font-mono flex flex-col min-h-screen">
       <Header />
       <div className="ml-4 mt-14 sm:ml-10 lg:ml-20 flex-grow">
-        <h1>Projects</h1>
+        <h1>Contact</h1>
       </div>
 
       <Footer />
@@ -14,4 +14,4 @@ function projects() {
   );
 }
 
-export default projects;
+export default contact;
