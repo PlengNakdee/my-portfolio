@@ -8,7 +8,7 @@ function projects() {
       <Header />
       <div className="ml-4 mt-14 sm:ml-10 lg:ml-20 flex-grow sm:mr-10 lg:mr-16">
         <div className="text-6xl mb-6">
-          <p>Projects</p>
+          <p>Portfolio</p>
         </div>
         <div
           className="group flex-inline sm:grid md:grid-cols-2 lg:grid-cols-3 
@@ -17,22 +17,33 @@ function projects() {
           <Image
             href="https://netflix-clone-6ed91.web.app/"
             src="images/p1.png"
+            alt="picture of a website"
+            projectName="Project 1"
+            category="side project"
           />
           <Image
             href="https://netflix-clone-6ed91.web.app/"
             src="images/p1.png"
+            projectName="Project 1"
+            category="side project"
           />
           <Image
             href="https://netflix-clone-6ed91.web.app/"
             src="images/p1.png"
+            projectName="Project 1"
+            category="side project"
           />
           <Image
             href="https://netflix-clone-6ed91.web.app/"
             src="images/p1.png"
+            projectName="Project 1"
+            category="side project"
           />
           <Image
             href="https://netflix-clone-6ed91.web.app/"
             src="images/p1.png"
+            projectName="Project 1"
+            category="side project"
           />
         </div>
       </div>

@@ -7,7 +7,6 @@ export default function Home() {
     <div className="font-mono flex flex-col min-h-screen">
       <Head>
         <title>Portfolio-Pleng-Nakdee</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <div className="ml-4 mt-14 sm:ml-10 lg:ml-20 flex-grow">
