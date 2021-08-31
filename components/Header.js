@@ -5,7 +5,9 @@ function Header() {
   return (
     <header className="font-mono flex justify-between">
       <div className="ml-4 mt-4 sm:ml-10 lg:ml-20">
-        <p className="text-3xl">Pleng Nakdee</p>
+        <a href="/">
+          <p className="text-3xl">Pleng Nakdee</p>
+        </a>
       </div>
       <div className="flex">
         <div className="relative md:hidden mr-4 mt-4">
