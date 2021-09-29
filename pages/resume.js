@@ -55,39 +55,35 @@ const resume = () => {
                 </ul> 
             </div>
             <div className="pb-4">
-                <p>company | date</p>
-                <p className="font-semibold">title</p>
+                <p>IFA Media | Jun 2015 - Nov 2017</p>
+                <p className="font-semibold">Associate Producer</p>
                 <ul className="list-inside list-disc pl-4 sm:pl-8">
-                    <li>list</li>
-                    <li>list</li>
-                    <li>list</li>
+                    <li>Research and develop new documentary or TV format</li>
+                    <li>Manage logistics of production</li>
+                    <li>Manage post-production legal documents</li>
                 </ul> 
             </div>
           </div>
           <div className="">
             <p className="mt-4 font-bold text-red-300">education</p>
             <div className="pb-4">
-                <p>school | date</p>
-                <p>diploma</p>
+                <p>Thammasat University | 2005 - 2009</p>
+                <p>Bachelor of Arts in Film Studies</p>
             </div>
             <div className="pb-4">
-                <p>school | date</p>
-                <p>diploma</p>
-            </div>
-            <div className="pb-4">
-                <p>school | date</p>
-                <p>diploma</p>
+                <p>LaGrange College | 2006 - 2007</p>
+                <p>Liberal Arts and Sciences</p>
             </div>
           </div>
           <div className="">
             <p className="mt-4 font-bold text-green-300">certifications</p>
             <div className="pb-4">
-                <p>cert name</p>
-                <a href="/">credential id</a>
+                <p>AWS Certified Cloud Practitioner</p>
+                <a href="https://www.youracclaim.com/badges/a0fa2c37-bb7b-44f7-916b-9330b8e17f25" target="_blank">credential id</a>
             </div>
             <div className="pb-4">
-                <p>cert name</p>
-                <a href="/">credential id</a>
+                <p>Microsoft Certified: Azure Fundamentals</p>
+                <a href="https://www.credly.com/badges/dfd7a9e0-5ea7-41ca-9606-8d864a014e8d" target="_blank">credential id</a>
             </div>
           </div>
         </div>
