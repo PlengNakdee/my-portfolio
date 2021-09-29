@@ -1,35 +1,38 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-function resume() {
+const resume = () => {
   return (
     <div className="font-mono flex flex-col min-h-screen">
       <Header />
       <div className="ml-4 mt-14 sm:ml-10 lg:ml-20 flex-grow">
         <div className="text-6xl mb-6">
-          <p>Contact</p>
+          <p>Resume</p>
         </div>
-        <div className="text-lg">
-          <p className="mt-4">I'd love to hear from you.</p>
-          <p>
-            You can email me at{" "}
-            <a href="mailto:plengwn@gmail.com" target="_blank">
-              plengwn@gmail.com
-            </a>{" "}
-          </p>
-          <p>Or connect through my</p>
-          <p>
-            <a href="https://www.linkedin.com/in/plengnakdee/" target="_blank">
-              LinkedIn
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://github.com/PlengNakdee?tab=repositories"
-              target="_blank"
-            >
-              GitHub
-            </a>
-          </p>
+        <div className="text-lg divide-y-4 divide-white divide-dashed pr-8 space-y-2">
+          <div className="">
+            <p className="mt-4 text-blue-300">technical skills</p>
+            <div className="grid grid-cols-3">
+                <p>python</p>
+                <p>python</p>
+                <p>python</p>
+                <p>python</p>
+            </div>
+          </div>
+          <div className="">
+            <p className="mt-4 text-purple-300">experience</p>
+            <div className="grid grid-cols-3">
+                <p>python</p>
+            </div>
+          </div>
+          <div className="">
+            <p className="mt-4 text-red-300">education</p>
+            <p className="">skill</p>
+          </div>
+          <div className="">
+            <p className="mt-4 text-green-300">certifications</p>
+            <p className="">skill</p>
+          </div>
         </div>
       </div>
       <Footer />

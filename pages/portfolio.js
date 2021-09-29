@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Image from "../components/Image";
 
-function projects() {
+const projects = () => {
   return (
     <div className="font-mono flex flex-col min-h-screen">
       <Header />

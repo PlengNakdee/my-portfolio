@@ -22,7 +22,7 @@ export default function Home() {
             I enjoy the analytical and problem-solving aspects that come with
             coding. My current work involves native cloud web applications,
             which focuses on front-end. I’m also an Ai enthusiast with some
-            experience in deep learning.{" "}
+            experiences in deep learning.{" "}
           </p>
         </div>
       </div>

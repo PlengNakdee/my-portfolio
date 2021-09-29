@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-function contact() {
+const contact = () => {
   return (
     <div className="font-mono flex flex-col min-h-screen">
       <Header />
