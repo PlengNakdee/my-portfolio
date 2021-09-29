@@ -19,6 +19,9 @@ function Header() {
                 <a href="/" className="text-blue-300">
                   about
                 </a>
+                <a href="/resume" className="text-indigo-300">
+                  resume
+                </a>
                 <a href="/portfolio" className="text-red-300">
                   portfolio
                 </a>
