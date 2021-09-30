@@ -13,7 +13,9 @@ const Header = () => {
   return (
     <div className={`fixed z-20 fixed w-full font-mono flex justify-between ${scroll ? "bg-black" :  "bg-none"}`}>
       <div className="ml-4 mt-4 sm:ml-10 lg:ml-20">
-        <p className="text-3xl">Pleng Nakdee</p>
+        <a href="/">
+          <p className="text-3xl">Pleng Nakdee</p>
+        </a>
       </div>
       <div className="flex">
         <div className="relative md:hidden mr-4 mt-4">

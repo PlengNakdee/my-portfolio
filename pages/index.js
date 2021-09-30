@@ -13,16 +13,16 @@ export default function Home() {
         <div>
           <p className="text-9xl">Hi,</p>
           <p className="text-4xl mt-4 mr-6">
-            I'm a Fullstack Developer / Cloud Engineer
+            I'm a Software Engineer...
           </p>
           <p></p>
         </div>
         <div className="text-lg mt-4 mr-6">
           <p>
-            I enjoy the analytical and problem-solving aspects that come with
-            coding. My current work involves native cloud web applications,
-            which focuses on front-end. I’m also an Ai enthusiast with some
-            experiences in deep learning.{" "}
+            with focus on cloud computing. I work with the full stack of cloud solutions: from infrastructure as code, to backend, to frontend. I’m also an Ai enthusiast with some
+            experience in deep learning. You can go to my <a href="/portfolio" className="text-red-300">
+            portfolio
+          </a> to see some of my works.
           </p>
         </div>
       </div>
