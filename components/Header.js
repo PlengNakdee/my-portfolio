@@ -1,9 +1,17 @@
 import { Popover, Menu } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/solid";
+import { useState, useEffect } from "react";
 
-function Header() {
+const Header = () => {
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY > 10);
+    });
+  }, []);
+
   return (
-    <header className="font-mono flex justify-between">
+    <div className={`fixed z-20 fixed w-full font-mono flex justify-between ${scroll ? "bg-black" :  "bg-none"}`}>
       <div className="ml-4 mt-4 sm:ml-10 lg:ml-20">
         <a href="/">
           <p className="text-3xl">Pleng Nakdee</p>
@@ -20,6 +28,9 @@ function Header() {
               <div className="grid">
                 <a href="/" className="text-blue-300">
                   about
+                </a>
+                <a href="/resume" className="text-purple-300">
+                  resume
                 </a>
                 <a href="/portfolio" className="text-red-300">
                   portfolio
@@ -38,15 +49,22 @@ function Header() {
           <a href="/" className="text-blue-300">
             about
           </a>
+          <span>|</span>
+          <a href="/resume" className="text-purple-300">
+            resume
+          </a>
+          <span>|</span>
           <a href="/portfolio" className="text-red-300">
             portfolio
           </a>
+          <span>|</span>
           <a href="/contact" className="text-green-300">
             contact
           </a>
         </div>
       </div>
-    </header>
+    </div>
+ 
   );
 }
 

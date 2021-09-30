@@ -9,7 +9,7 @@ export default function Home() {
         <title>Portfolio-Pleng-Nakdee</title>
       </Head>
       <Header />
-      <div className="ml-4 mt-14 sm:ml-10 lg:ml-20 flex-grow">
+      <div className="ml-4 mt-24 sm:ml-10 lg:ml-20 flex-grow">
         <div>
           <p className="text-9xl">Hi,</p>
           <p className="text-4xl mt-4 mr-6">

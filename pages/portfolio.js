@@ -3,14 +3,14 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ImageCard from "../components/ImageCard";
 
-function projects() {
+const projects = () => {
   return (
     <div className="font-mono flex flex-col min-h-screen">
       <Head>
         <title>Portfolio</title>
       </Head>
       <Header />
-      <div className="ml-4 mt-14 sm:ml-10 lg:ml-20 sm:mr-10 lg:mr-16">
+      <div className="ml-4 mt-24 sm:ml-10 lg:ml-20 flex-grow sm:mr-10 lg:mr-16">
         <div className="text-6xl mb-6">
           <p>Portfolio</p>
         </div>
