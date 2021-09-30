@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import ImageCard from "../components/ImageCard";
+import ProjectCard from "../components/ProjectCard";
 
 const projects = () => {
   return (
@@ -14,44 +14,37 @@ const projects = () => {
         <div className="text-6xl mb-6">
           <p>Portfolio</p>
         </div>
-        <div className="grid flex-wrap space-y-4 md:grid-cols-2 lg:grid-cols-3 
-        xl:grid-cols-4">
-          <ImageCard
+        <div className="grid flex-wrap space-y-4 sm:space-y-0 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <ProjectCard
+            href="/portfolio/this"
+            projectName={"this website"}
+            category={"side project"}
+          />
+          <ProjectCard
             href="/portfolio/movie-trailer"
-            src="images/clone-1.png"
-            alt="picture of a website"
-            projectName="movie trailer website"
-            category="side project"
+            projectName={"a movie trailer site"}
+            category={"side project"}
           />
-          <ImageCard
-            href="https://netflix-clone-6ed91.web.app/"
-            src="images/p1.png"
-            projectName="Project 1"
-            category="side project"
+          <ProjectCard
+            href="/portfolio"
+            projectName={"coming soon"}
+            category={"side project"}
           />
-          <ImageCard
-            href="https://netflix-clone-6ed91.web.app/"
-            src="images/p1.png"
-            projectName="Project 1"
-            category="side project"
+          <ProjectCard
+            href="/portfolio"
+            projectName={"coming soon"}
+            category={"client project"}
           />
-          <ImageCard
-            href="https://netflix-clone-6ed91.web.app/"
-            src="images/p1.png"
-            projectName="Project 1"
-            category="side project"
-          />
-          <ImageCard
-            href="https://netflix-clone-6ed91.web.app/"
-            src="images/p1.png"
-            projectName="Project 1"
-            category="side project"
+          <ProjectCard
+            href="/portfolio"
+            projectName={"coming soon"}
+            category={"side project"}
           />
         </div>
       </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default projects;
