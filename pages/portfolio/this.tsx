@@ -15,15 +15,14 @@ const This = () => {
         <p>frontend</p>
         <p>backend/aws</p>
         <div className="mt-4">
-          <a
-            href="https://github.com/PlengNakdee/my-portfolio"
-            target="_blank"
-          >
+          <a href="https://github.com/PlengNakdee/my-portfolio" target="_blank">
             Github
           </a>
         </div>
       </div>
-      <a href="/portfolio" className="flex justify-center">&#8592; back to projects</a>
+      <a href="/portfolio" className="flex justify-center">
+        &#8592; back to projects
+      </a>
       <Footer />
     </div>
   );

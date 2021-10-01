@@ -1,5 +1,5 @@
-import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const contact = () => {
   return (
@@ -35,6 +35,6 @@ const contact = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default contact;

@@ -5,6 +5,6 @@ const Footer = () => {
       <p>© {today.getFullYear()} Pleng Nakdee</p>
     </div>
   );
-}
+};
 
 export default Footer;

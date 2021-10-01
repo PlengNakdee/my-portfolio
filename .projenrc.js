@@ -39,6 +39,7 @@ const project = new web.NextJsTypeScriptProject({
       "react",
       "react-dom",
       "react-scroll",
+      '@aws-cdk/core',
     ],
 
     devDeps: [

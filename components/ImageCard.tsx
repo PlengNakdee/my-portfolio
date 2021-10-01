@@ -1,4 +1,4 @@
-const ImageCard = ({ href, src, projectName, category } : any) => {
+const ImageCard = ({ href, src, projectName, category }: any) => {
   return (
     <div className="grid">
       <a href={href}>
@@ -6,8 +6,8 @@ const ImageCard = ({ href, src, projectName, category } : any) => {
       </a>
       <p className="pt-2">{projectName}</p>
       <p className="">{category}</p>
-      </div>
+    </div>
   );
-}
+};
 
 export default ImageCard;
