@@ -108,6 +108,10 @@
       "type": "build"
     },
     {
+      "name": "@aws-cdk/core",
+      "type": "runtime"
+    },
+    {
       "name": "@headlessui/react",
       "type": "runtime"
     },
