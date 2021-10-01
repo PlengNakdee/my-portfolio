@@ -38,28 +38,17 @@
     },
     "test:compile": {
       "name": "test:compile",
-      "description": "compiles the test code",
-      "steps": [
-        {
-          "exec": "tsc --noEmit --project tsconfig.jest.json"
-        }
-      ]
+      "description": "compiles the test code"
     },
     "test": {
       "name": "test",
       "description": "Run tests",
       "steps": [
         {
-          "exec": "rm -fr lib/"
-        },
-        {
           "spawn": "test:compile"
         },
         {
-          "exec": "jest --passWithNoTests --all --updateSnapshot"
-        },
-        {
-          "spawn": "eslint"
+          "exec": "react-scripts test --watchAll=false"
         }
       ]
     },
@@ -68,34 +57,13 @@
       "description": "Full release build (test+compile)",
       "steps": [
         {
-          "exec": "npx projen"
-        },
-        {
           "spawn": "test"
         },
         {
           "spawn": "compile"
         },
         {
-          "spawn": "synth"
-        }
-      ]
-    },
-    "test:watch": {
-      "name": "test:watch",
-      "description": "Run jest in watch mode",
-      "steps": [
-        {
-          "exec": "jest --watch"
-        }
-      ]
-    },
-    "test:update": {
-      "name": "test:update",
-      "description": "Update jest snapshots",
-      "steps": [
-        {
-          "exec": "jest --updateSnapshot"
+          "exec": "react-scripts build"
         }
       ]
     },
@@ -113,7 +81,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import jest jest-junit json-schema npm-check-updates ts-jest ts-node typescript @aws-cdk/assert @aws-cdk/aws-s3-deployment @aws-cdk/aws-s3 @aws-cdk/core"
+          "exec": "yarn upgrade @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom @types/react-scroll npm-check-updates typescript @headlessui/react @heroicons/react @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/line-clamp @tailwindcss/typography autoprefixer postcss react react-dom react-scripts react-scroll tailwindcss web-vitals"
         },
         {
           "exec": "npx projen"
@@ -158,48 +126,21 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
+    "dev": {
+      "name": "dev",
+      "description": "Starts the react application",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
+          "exec": "react-scripts start"
         }
       ]
     },
-    "synth": {
-      "name": "synth",
-      "description": "Synthesizes your cdk app into cdk.out (part of \"yarn build\")",
+    "eject": {
+      "name": "eject",
+      "description": "Ejects your React application from react-scripts",
       "steps": [
         {
-          "exec": "cdk synth"
-        }
-      ]
-    },
-    "deploy": {
-      "name": "deploy",
-      "description": "Deploys your CDK app to the AWS cloud",
-      "steps": [
-        {
-          "exec": "cdk deploy"
-        }
-      ]
-    },
-    "destroy": {
-      "name": "destroy",
-      "description": "Destroys your cdk app in the AWS cloud",
-      "steps": [
-        {
-          "exec": "cdk destroy"
-        }
-      ]
-    },
-    "diff": {
-      "name": "diff",
-      "description": "Diffs the currently deployed app against your code",
-      "steps": [
-        {
-          "exec": "cdk diff"
+          "exec": "react-scripts eject"
         }
       ]
     }
