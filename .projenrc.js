@@ -28,6 +28,7 @@ const project = new AwsCdkTypeScriptApp({
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['PlengNakdee'],
   },
+
 });
 
 project.synth();
