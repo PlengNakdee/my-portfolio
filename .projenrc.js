@@ -100,21 +100,18 @@ const project = new web.NextJsTypeScriptProject({
 project.removeTask('dev')
 const nextDev = project.addTask('dev', {
   description: 'Set script for next dev',
-  // category: tasks.TaskCategory.BUILD,
 });
 nextDev.exec('node server.js');
 
 project.removeTask('build')
 const nextBuild = project.addTask('build', {
   description: 'Set script for next build',
-  // category: tasks.TaskCategory.BUILD,
 });
 nextBuild.exec('next build');
 
 project.removeTask('start')
 const nextStart = project.addTask('start', {
   description: 'Set script for next start',
-  // category: tasks.TaskCategory.BUILD,
 });
 nextStart.exec('node server.js');
 

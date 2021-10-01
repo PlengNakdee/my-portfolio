@@ -34,26 +34,68 @@
     },
     "compile": {
       "name": "compile",
-      "description": "Only compile",
-      "steps": [
-        {
-          "exec": "tsc --build"
-        }
-      ]
+      "description": "Only compile"
     },
     "test:compile": {
       "name": "test:compile",
-      "description": "compiles the test code"
+      "description": "compiles the test code",
+      "steps": [
+        {
+          "exec": "tsc --noEmit --project tsconfig.jest.json"
+        }
+      ]
     },
     "test": {
       "name": "test",
       "description": "Run tests",
       "steps": [
         {
+          "exec": "rm -fr lib/"
+        },
+        {
           "spawn": "test:compile"
         },
         {
+          "exec": "jest --passWithNoTests --all --updateSnapshot"
+        },
+        {
           "spawn": "eslint"
+        }
+      ]
+    },
+    "build": {
+      "name": "build",
+      "description": "Full release build (test+compile)",
+      "steps": [
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "test"
+        },
+        {
+          "spawn": "compile"
+        },
+        {
+          "spawn": "synth"
+        }
+      ]
+    },
+    "test:watch": {
+      "name": "test:watch",
+      "description": "Run jest in watch mode",
+      "steps": [
+        {
+          "exec": "jest --watch"
+        }
+      ]
+    },
+    "test:update": {
+      "name": "test:update",
+      "description": "Update jest snapshots",
+      "steps": [
+        {
+          "exec": "jest --updateSnapshot"
         }
       ]
     },
@@ -71,7 +113,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @sanity/cli @testing-library/dom @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event @types/node @types/react @types/react-dom @types/react-scroll @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier i18next-fs-backend i18next-parser json-schema npm-check-updates prettier source-map-support typescript @aws-cdk/core @headlessui/react @heroicons/react @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/line-clamp @tailwindcss/typography autoprefixer next postcss react react-dom react-scroll tailwindcss"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import jest jest-junit json-schema npm-check-updates ts-jest ts-node typescript @aws-cdk/assert @aws-cdk/core"
         },
         {
           "exec": "npx projen"
@@ -121,61 +163,43 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern pages test build-tools"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
         }
       ]
     },
-    "export": {
-      "name": "export",
-      "description": "Exports the application for production deployment",
+    "synth": {
+      "name": "synth",
+      "description": "Synthesizes your cdk app into cdk.out (part of \"yarn build\")",
       "steps": [
         {
-          "exec": "next export"
+          "exec": "cdk synth"
         }
       ]
     },
-    "server": {
-      "name": "server",
-      "description": "Starts the Next.js application in production mode",
+    "deploy": {
+      "name": "deploy",
+      "description": "Deploys your CDK app to the AWS cloud",
       "steps": [
         {
-          "exec": "next start"
+          "exec": "cdk deploy"
         }
       ]
     },
-    "telemetry": {
-      "name": "telemetry",
-      "description": "Checks the status of Next.js telemetry collection",
+    "destroy": {
+      "name": "destroy",
+      "description": "Destroys your cdk app in the AWS cloud",
       "steps": [
         {
-          "exec": "next telemetry"
+          "exec": "cdk destroy"
         }
       ]
     },
-    "dev": {
-      "name": "dev",
-      "description": "Set script for next dev",
+    "diff": {
+      "name": "diff",
+      "description": "Diffs the currently deployed app against your code",
       "steps": [
         {
-          "exec": "node server.js"
-        }
-      ]
-    },
-    "build": {
-      "name": "build",
-      "description": "Set script for next build",
-      "steps": [
-        {
-          "exec": "next build"
-        }
-      ]
-    },
-    "start": {
-      "name": "start",
-      "description": "Set script for next start",
-      "steps": [
-        {
-          "exec": "node server.js"
+          "exec": "cdk diff"
         }
       ]
     }
