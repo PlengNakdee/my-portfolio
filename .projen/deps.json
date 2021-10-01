@@ -1,8 +1,32 @@
 {
   "dependencies": [
     {
+      "name": "@sanity/cli",
+      "type": "build"
+    },
+    {
+      "name": "@testing-library/dom",
+      "type": "build"
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "type": "build"
+    },
+    {
+      "name": "@testing-library/react",
+      "type": "build"
+    },
+    {
+      "name": "@testing-library/react-hooks",
+      "type": "build"
+    },
+    {
+      "name": "@testing-library/user-event",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
-      "version": "^12.13.0",
+      "version": "^14.15.0",
       "type": "build"
     },
     {
@@ -14,8 +38,60 @@
       "type": "build"
     },
     {
+      "name": "@types/react-scroll",
+      "type": "build"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "type": "build"
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "type": "build"
+    },
+    {
+      "name": "eslint",
+      "type": "build"
+    },
+    {
+      "name": "eslint-config-prettier",
+      "type": "build"
+    },
+    {
+      "name": "eslint-import-resolver-node",
+      "type": "build"
+    },
+    {
+      "name": "eslint-import-resolver-typescript",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-import",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "type": "build"
+    },
+    {
+      "name": "i18next-fs-backend",
+      "type": "build"
+    },
+    {
+      "name": "i18next-parser",
+      "type": "build"
+    },
+    {
+      "name": "json-schema",
+      "type": "build"
+    },
+    {
       "name": "npm-check-updates",
       "version": "^11",
+      "type": "build"
+    },
+    {
+      "name": "prettier",
       "type": "build"
     },
     {
@@ -23,11 +99,41 @@
       "type": "build"
     },
     {
-      "name": "typescript",
+      "name": "source-map-support",
       "type": "build"
     },
     {
+      "name": "typescript",
+      "version": "4.3",
+      "type": "build"
+    },
+    {
+      "name": "@headlessui/react",
+      "type": "runtime"
+    },
+    {
+      "name": "@heroicons/react",
+      "type": "runtime"
+    },
+    {
+      "name": "@tailwindcss/aspect-ratio",
+      "type": "runtime"
+    },
+    {
+      "name": "@tailwindcss/forms",
+      "type": "runtime"
+    },
+    {
+      "name": "@tailwindcss/line-clamp",
+      "type": "runtime"
+    },
+    {
+      "name": "@tailwindcss/typography",
+      "type": "runtime"
+    },
+    {
       "name": "autoprefixer",
+      "version": "^9",
       "type": "runtime"
     },
     {
@@ -36,6 +142,7 @@
     },
     {
       "name": "postcss",
+      "version": "^8",
       "type": "runtime"
     },
     {
@@ -47,7 +154,12 @@
       "type": "runtime"
     },
     {
+      "name": "react-scroll",
+      "type": "runtime"
+    },
+    {
       "name": "tailwindcss",
+      "version": "^2",
       "type": "runtime"
     }
   ],

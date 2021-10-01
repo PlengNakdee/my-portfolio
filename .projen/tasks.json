@@ -51,6 +51,9 @@
       "steps": [
         {
           "spawn": "test:compile"
+        },
+        {
+          "spawn": "eslint"
         }
       ]
     },
@@ -86,7 +89,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/node @types/react @types/react-dom npm-check-updates typescript autoprefixer next postcss react react-dom tailwindcss"
+          "exec": "yarn upgrade @sanity/cli @testing-library/dom @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event @types/node @types/react @types/react-dom @types/react-scroll @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier i18next-fs-backend i18next-parser json-schema npm-check-updates prettier source-map-support typescript @headlessui/react @heroicons/react @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/line-clamp @tailwindcss/typography autoprefixer next postcss react react-dom react-scroll tailwindcss"
         },
         {
           "exec": "npx projen"
@@ -128,6 +131,15 @@
       "steps": [
         {
           "exec": "tsc --build -w"
+        }
+      ]
+    },
+    "eslint": {
+      "name": "eslint",
+      "description": "Runs eslint against the codebase",
+      "steps": [
+        {
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern pages test build-tools"
         }
       ]
     },

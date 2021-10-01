@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "lib",
     "alwaysStrict": true,
     "declaration": true,
     "experimentalDecorators": true,
@@ -33,14 +31,18 @@
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+    "noEmit": true,
+    "rootDir": "."
   },
   "include": [
+    ".projenrc.js",
     "pages/**/*.ts",
+    "test/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
   "exclude": [
+    "node_modules",
     "*/**/*.test.tsx",
     "setupTests.ts",
     "node_modules",

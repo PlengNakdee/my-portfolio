@@ -13,6 +13,6 @@ dist
 /.idea/
 /.projenrc.js
 tsconfig.tsbuildinfo
-/tailwind.config.json
-/postcss.config.json
+/.eslintrc.json
+/tsconfig.eslint.json
 /.next/
