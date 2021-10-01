@@ -45,3 +45,4 @@ out
 !/.eslintrc.json
 !/tsconfig.eslint.json
 /.next/
+!/.vscode/settings.json

@@ -1,4 +1,4 @@
-const { web, ProjectType, DependenciesUpgradeMechanism, } = require('projen');
+const { web, DependenciesUpgradeMechanism, JsonFile } = require('projen');
 
 const AUTOMATION_TOKEN = "PROJEN_UPGRADE_KEY";
 
@@ -6,7 +6,6 @@ const project = new web.NextJsTypeScriptProject({
   cdkVersion: '1.95.2',
   defaultReleaseBranch: 'main',
   name: 'my-portfolio',
-  projectType: ProjectType.APP,
 
   projenUpgradeSecret: AUTOMATION_TOKEN,
   projenUpgradeSchedule: ["0 0 * * *"],
@@ -95,6 +94,60 @@ const project = new web.NextJsTypeScriptProject({
         },
       },
     },
-
 });
+
+project.removeTask('dev')
+const nextDev = project.addTask('dev', {
+  description: 'Set script for next dev',
+  // category: tasks.TaskCategory.BUILD,
+});
+nextDev.exec('node server.js');
+
+project.removeTask('build')
+const nextBuild = project.addTask('build', {
+  description: 'Set script for next build',
+  // category: tasks.TaskCategory.BUILD,
+});
+nextBuild.exec('next build');
+
+project.removeTask('start')
+const nextStart = project.addTask('start', {
+  description: 'Set script for next start',
+  // category: tasks.TaskCategory.BUILD,
+});
+nextStart.exec('node server.js');
+
+new JsonFile(project, ".vscode/settings.json", {
+  obj: {
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.locale": "en",
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.suggest.completeFunctionCalls": false,
+    "typescript.surveys.enabled": false,
+    "npm.packageManager": "yarn",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "diffEditor.codeLens": true,
+    "files.trimTrailingWhitespace": true,
+    "emmet.triggerExpansionOnTab": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.lintTask.enable": true,
+    "eslint.format.enable": true,
+    "eslint.packageManager": "yarn",
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "css.validate": false,
+    "editor.quickSuggestions": { strings: true },
+    "tailwindCSS.colorDecorators": true,
+    "tailwindCSS.validate": true,
+    "tailwindCSS.emmetCompletions": true,
+    "git.ignoreLimitWarning": true,
+    "jest.runAllTestsFirst": false,
+    "jest.restartJestOnSnapshotUpdate": true,
+  },
+  readonly: false,
+});
+
 project.synth();

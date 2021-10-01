@@ -1,4 +1,4 @@
-function Image({ href, src, projectName, category }) {
+const ImageCard = ({ href, src, projectName, category } : any) => {
   return (
     <div className="grid">
       <a href={href}>
@@ -10,4 +10,4 @@ function Image({ href, src, projectName, category }) {
   );
 }
 
-export default Image;
+export default ImageCard;

@@ -1,4 +1,4 @@
-const ProjectCard = ({ href, projectName, category }) => {
+const ProjectCard = ({ href, projectName, category } : any) => {
   return (
     <div className="grid">
       <a href={href}>
