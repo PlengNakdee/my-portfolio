@@ -34,7 +34,12 @@
     },
     "compile": {
       "name": "compile",
-      "description": "Only compile"
+      "description": "Only compile",
+      "steps": [
+        {
+          "exec": "tsc --build"
+        }
+      ]
     },
     "test:compile": {
       "name": "test:compile",
@@ -48,7 +53,7 @@
           "spawn": "test:compile"
         },
         {
-          "exec": "react-scripts test --watchAll=false"
+          "spawn": "eslint"
         }
       ]
     },
@@ -63,7 +68,7 @@
           "spawn": "compile"
         },
         {
-          "exec": "react-scripts build"
+          "exec": "next build"
         }
       ]
     },
@@ -81,7 +86,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom @types/react-scroll npm-check-updates typescript @headlessui/react @heroicons/react @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/line-clamp @tailwindcss/typography autoprefixer postcss react react-dom react-scripts react-scroll tailwindcss web-vitals"
+          "exec": "yarn upgrade @types/node @types/react @types/react-dom @types/react-scroll @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import json-schema npm-check-updates typescript @headlessui/react @heroicons/react @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/line-clamp @tailwindcss/typography autoprefixer next postcss react react-dom react-scroll tailwindcss"
         },
         {
           "exec": "npx projen"
@@ -126,21 +131,48 @@
         }
       ]
     },
-    "dev": {
-      "name": "dev",
-      "description": "Starts the react application",
+    "eslint": {
+      "name": "eslint",
+      "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "react-scripts start"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern pages test build-tools .projenrc.js"
         }
       ]
     },
-    "eject": {
-      "name": "eject",
-      "description": "Ejects your React application from react-scripts",
+    "dev": {
+      "name": "dev",
+      "description": "Starts the Next.js application in development mode",
       "steps": [
         {
-          "exec": "react-scripts eject"
+          "exec": "next dev"
+        }
+      ]
+    },
+    "export": {
+      "name": "export",
+      "description": "Exports the application for production deployment",
+      "steps": [
+        {
+          "exec": "next export"
+        }
+      ]
+    },
+    "server": {
+      "name": "server",
+      "description": "Starts the Next.js application in production mode",
+      "steps": [
+        {
+          "exec": "next start"
+        }
+      ]
+    },
+    "telemetry": {
+      "name": "telemetry",
+      "description": "Checks the status of Next.js telemetry collection",
+      "steps": [
+        {
+          "exec": "next telemetry"
         }
       ]
     }
