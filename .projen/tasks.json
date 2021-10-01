@@ -57,6 +57,24 @@
         }
       ]
     },
+    "build": {
+      "name": "build",
+      "description": "Full release build (test+compile)",
+      "steps": [
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "test"
+        },
+        {
+          "spawn": "compile"
+        },
+        {
+          "exec": "next build"
+        }
+      ]
+    },
     "upgrade": {
       "name": "upgrade",
       "description": "upgrade dependencies",
@@ -125,6 +143,15 @@
         }
       ]
     },
+    "dev": {
+      "name": "dev",
+      "description": "Starts the Next.js application in development mode",
+      "steps": [
+        {
+          "exec": "next dev"
+        }
+      ]
+    },
     "export": {
       "name": "export",
       "description": "Exports the application for production deployment",
@@ -149,33 +176,6 @@
       "steps": [
         {
           "exec": "next telemetry"
-        }
-      ]
-    },
-    "dev": {
-      "name": "dev",
-      "description": "Set script for next dev",
-      "steps": [
-        {
-          "exec": "node server.js"
-        }
-      ]
-    },
-    "build": {
-      "name": "build",
-      "description": "Set script for next build",
-      "steps": [
-        {
-          "exec": "next build"
-        }
-      ]
-    },
-    "start": {
-      "name": "start",
-      "description": "Set script for next start",
-      "steps": [
-        {
-          "exec": "node server.js"
         }
       ]
     }
