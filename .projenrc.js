@@ -1,10 +1,7 @@
 const {
   AwsCdkTypeScriptApp,
-  DependenciesUpgradeMechanism,
   web,
 } = require('projen');
-
-const AUTOMATION_TOKEN = 'PROJEN_UPGRADE_KEY';
 
 const projectName = 'my-portfolio';
 
@@ -15,19 +12,6 @@ const project = new AwsCdkTypeScriptApp({
   name: `${projectName}-backend`,
 
   cdkDependencies: ['@aws-cdk/aws-s3-deployment', '@aws-cdk/aws-s3'],
-
-  projenUpgradeSecret: AUTOMATION_TOKEN,
-  projenUpgradeSchedule: ['0 0 * * *'],
-  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
-    workflowOptions: {
-      labels: ['auto-approve'],
-      secret: AUTOMATION_TOKEN,
-    },
-  }),
-  autoApproveOptions: {
-    secret: 'GITHUB_TOKEN',
-    allowedUsernames: ['PlengNakdee'],
-  },
 
 });
 
