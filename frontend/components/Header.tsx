@@ -1,5 +1,6 @@
 import { Popover } from '@headlessui/react';
 import { MenuIcon } from '@heroicons/react/solid';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const Header = () => {
@@ -12,7 +13,9 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed z-20 fixed w-full font-mono flex justify-between ${scroll ? 'bg-black' : 'bg-none'}`}
+      className={`fixed z-20 fixed w-full font-mono flex justify-between ${
+        scroll ? 'bg-black' : 'bg-none'
+      }`}
     >
       <div className="ml-4 mt-4 sm:ml-10 lg:ml-20">
         <a href="/">
@@ -28,18 +31,18 @@ const Header = () => {
 
             <Popover.Panel className="z-10">
               <div className="grid">
-                <a href="/" className="text-blue-300">
-                  about
-                </a>
-                <a href="/resume" className="text-purple-300">
-                  resume
-                </a>
-                <a href="/portfolio" className="text-red-300">
-                  portfolio
-                </a>
-                <a href="/contact" className="text-green-300">
-                  contact
-                </a>
+                <Link href="/">
+                  <a className="text-blue-300">about</a>
+                </Link>
+                <Link href="/resume">
+                  <a className="text-purple-300">resume</a>
+                </Link>
+                <Link href="/portfolio">
+                  <a className="text-red-300">portfolio</a>
+                </Link>
+                <Link href="/contact">
+                  <a className="text-green-300">contact</a>
+                </Link>
               </div>
             </Popover.Panel>
           </Popover>
@@ -48,21 +51,21 @@ const Header = () => {
           className="hidden md:flex space-x-2 mr-4 mt-6 sm:mr-10 lg:mr-20
         sm:space-x-4 lg:space-x-6"
         >
-          <a href="/" className="text-blue-300">
-            about
-          </a>
+          <Link href="/">
+            <a className="text-blue-300">about</a>
+          </Link>
           <span>|</span>
-          <a href="/resume" className="text-purple-300">
-            resume
-          </a>
+          <Link href="/resume">
+            <a className="text-purple-300">resume</a>
+          </Link>
           <span>|</span>
-          <a href="/portfolio" className="text-red-300">
-            portfolio
-          </a>
+          <Link href="/portfolio">
+            <a className="text-red-300">portfolio</a>
+          </Link>
           <span>|</span>
-          <a href="/contact" className="text-green-300">
-            contact
-          </a>
+          <Link href="/contact">
+            <a className="text-green-300">contact</a>
+          </Link>
         </div>
       </div>
     </div>

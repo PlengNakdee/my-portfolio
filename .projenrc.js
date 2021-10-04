@@ -8,10 +8,26 @@ const project = new AwsCdkTypeScriptApp({
   defaultReleaseBranch: "main",
   name: `${projectName}-backend`,
 
+  gitignore: ["aws"],
+
   cdkDependencies: [
     "@aws-cdk/core",
     "@aws-cdk/aws-s3-deployment",
     "@aws-cdk/aws-s3",
+    '@aws-cdk/aws-iam',
+  ],
+
+  deps: [
+  ],
+
+  devDeps: [
+    'aws-sdk',
+    '@types/aws-lambda',
+    '@types/node',
+    'jest-extended',
+    'eslint-plugin-jest',
+    'eslint-plugin-jest-formatting',
+    'cdk-assume-role-credential-plugin',
   ],
 });
 
@@ -20,6 +36,12 @@ const nextBuild = project.addTask('build', {
   description: 'Set script for next build',
 });
 nextBuild.exec('yarn --cwd frontend next build');
+
+project.removeTask('export')
+const nextExport = project.addTask('export', {
+  description: 'Set script for next export',
+});
+nextExport.exec('yarn --cwd frontend next export');
 
 project.synth();
 
@@ -32,7 +54,7 @@ const frontend = new web.NextJsTypeScriptProject({
   typescriptVersion: "4.3",
   minNodeVersion: "14.15.0",
   eslint: true,
-  // gitignore: ["out"],
+  gitignore: ["out"],
 
   tsconfig: {
     compilerOptions: {

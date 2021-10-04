@@ -8,6 +8,8 @@ import {
   Stack,
   StackProps,
 } from "@aws-cdk/core";
+// import { stageEnv } from "./envs";
+// import { PermissionsStack } from "./permissions-stack";
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
@@ -15,7 +17,7 @@ export class MyStack extends Stack {
 
     const siteBucket = new s3.Bucket(this, "SiteBucket", {
       websiteIndexDocument: "index.html",
-      websiteErrorDocument: "error.html",
+      websiteErrorDocument: "404.html",
       publicReadAccess: true,
       cors: [
         {
@@ -35,6 +37,12 @@ export class MyStack extends Stack {
       autoDeleteObjects: true,
     });
 
+    // new PermissionsStack(app, 'bootstrap-stage', {
+    //   env: stageEnv,
+    //   trustedAccount: stageEnv.account!,
+    //   terminationProtection: true,
+    // });
+
     // Deploy site contents to S3 bucket
     new s3deploy.BucketDeployment(this, "BucketDeployment", {
       sources: [s3deploy.Source.asset("./frontend/out")],
@@ -52,6 +60,7 @@ export class MyStack extends Stack {
 //   account: process.env.CDK_DEFAULT_ACCOUNT,
 //   region: process.env.CDK_DEFAULT_REGION,
 // };
+
 const devEnv = {
   account: '483297557526',
   region: 'ap-southeast-1'
@@ -59,7 +68,7 @@ const devEnv = {
 
 const app = new App();
 
-new MyStack(app, "my-stack-dev", { env: devEnv });
-// new MyStack(app, 'my-stack-prod', { env: prodEnv });
+new MyStack(app, "portfolio-dev", { env: devEnv });
+// new MyStack(app, 'portfolio-prod', { env: prodEnv });
 
 app.synth();

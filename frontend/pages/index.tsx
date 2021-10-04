@@ -20,11 +20,7 @@ export default function Home() {
             with focus on cloud computing. I work with the full stack of cloud
             solutions: from infrastructure as code, to backend, to frontend. I’m
             also an Ai enthusiast with some experience in deep learning. You can
-            go to my{' '}
-            <a href="/portfolio" className="text-red-300">
-              portfolio
-            </a>{' '}
-            to see some of my works.
+            go to my portfolio to see some of my works.
           </p>
         </div>
       </div>

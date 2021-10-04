@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@types/aws-lambda",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -23,6 +27,14 @@
       "type": "build"
     },
     {
+      "name": "aws-sdk",
+      "type": "build"
+    },
+    {
+      "name": "cdk-assume-role-credential-plugin",
+      "type": "build"
+    },
+    {
       "name": "eslint",
       "type": "build"
     },
@@ -39,7 +51,19 @@
       "type": "build"
     },
     {
+      "name": "eslint-plugin-jest",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-jest-formatting",
+      "type": "build"
+    },
+    {
       "name": "jest",
+      "type": "build"
+    },
+    {
+      "name": "jest-extended",
       "type": "build"
     },
     {
@@ -75,6 +99,11 @@
     },
     {
       "name": "@aws-cdk/assert",
+      "version": "1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-iam",
       "version": "1.95.2",
       "type": "runtime"
     },
