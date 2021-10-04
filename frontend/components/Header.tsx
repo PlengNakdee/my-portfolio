@@ -1,20 +1,18 @@
-import { Popover } from "@headlessui/react";
-import { MenuIcon } from "@heroicons/react/solid";
-import { useState, useEffect } from "react";
+import { Popover } from '@headlessui/react';
+import { MenuIcon } from '@heroicons/react/solid';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       setScroll(window.scrollY > 10);
     });
   }, []);
 
   return (
     <div
-      className={`fixed z-20 fixed w-full font-mono flex justify-between ${
-        scroll ? "bg-black" : "bg-none"
-      }`}
+      className={`fixed z-20 fixed w-full font-mono flex justify-between ${scroll ? 'bg-black' : 'bg-none'}`}
     >
       <div className="ml-4 mt-4 sm:ml-10 lg:ml-20">
         <a href="/">

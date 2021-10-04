@@ -1,5 +1,5 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const contact = () => {
   return (
@@ -12,17 +12,17 @@ const contact = () => {
         <div className="text-lg">
           <p className="mt-4">I'd love to hear from you.</p>
           <p>
-            You can email me at{" "}
+            You can email me at{' '}
             <a href="mailto:plengwn@gmail.com" target="_blank">
               plengwn@gmail.com
-            </a>{" "}
+            </a>{' '}
           </p>
           <p>Or connect through my</p>
           <p>
             <a href="https://www.linkedin.com/in/plengnakdee/" target="_blank">
               LinkedIn
-            </a>{" "}
-            and{" "}
+            </a>{' '}
+            and{' '}
             <a
               href="https://github.com/PlengNakdee?tab=repositories"
               target="_blank"
