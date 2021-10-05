@@ -8,7 +8,7 @@ const project = new AwsCdkTypeScriptApp({
   defaultReleaseBranch: "main",
   name: `${projectName}-backend`,
 
-  gitignore: ["aws"],
+  gitignore: [],
 
   cdkDependencies: [
     "@aws-cdk/core",
