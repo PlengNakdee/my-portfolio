@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
@@ -27,9 +28,9 @@ const MovieTrailer = () => {
           </a>
         </div>
       </div>
-      <a href="/portfolio" className="flex justify-center">
-        &#8592; back to projects
-      </a>
+      <Link href="/portfolio">
+        <a className="flex justify-center">&#8592; back to projects</a>
+      </Link>
       <Footer />
     </div>
   );
