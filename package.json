@@ -21,8 +21,8 @@
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^14.17.0",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "aws-cdk": "1.95.2",
     "eslint": "^7.32.0",
     "eslint-import-resolver-node": "^0.3.6",
@@ -35,7 +35,7 @@
     "projen": "^0.28.33",
     "ts-jest": "^27.0.5",
     "ts-node": "^9",
-    "typescript": "4.3"
+    "typescript": "4.4"
   },
   "dependencies": {
     "@aws-cdk/assert": "1.95.2",
