@@ -67,7 +67,7 @@ const frontend = new web.NextJsTypeScriptProject({
     compilerOptions: {
       rootDir: ".",
     },
-    exclude: ["*/**/*.test.tsx", "setupTests.ts", "node_modules", "lib"],
+    exclude: ["node_modules", "lib"],
   },
 
   /* spellchecker: disable */

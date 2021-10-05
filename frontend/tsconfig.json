@@ -41,8 +41,6 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "*/**/*.test.tsx",
-    "setupTests.ts",
     "node_modules",
     "lib"
   ],
