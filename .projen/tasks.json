@@ -63,6 +63,24 @@
         }
       ]
     },
+    "build": {
+      "name": "build",
+      "description": "Full release build (test+compile)",
+      "steps": [
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "test"
+        },
+        {
+          "spawn": "compile"
+        },
+        {
+          "spawn": "synth"
+        }
+      ]
+    },
     "test:watch": {
       "name": "test:watch",
       "description": "Run jest in watch mode",
@@ -107,7 +125,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk aws-sdk cdk-assume-role-credential-plugin eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-formatting jest jest-extended jest-junit json-schema npm-check-updates ts-jest ts-node typescript @aws-cdk/assert @aws-cdk/aws-iam @aws-cdk/aws-s3-deployment @aws-cdk/aws-s3 @aws-cdk/core"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import jest jest-junit json-schema npm-check-updates ts-jest ts-node typescript @aws-cdk/assert @aws-cdk/core"
         },
         {
           "exec": "npx projen"
@@ -206,33 +224,6 @@
       "steps": [
         {
           "exec": "cdk diff"
-        }
-      ]
-    },
-    "dev": {
-      "name": "dev",
-      "description": "Set script for next build",
-      "steps": [
-        {
-          "exec": "yarn --cwd frontend next dev"
-        }
-      ]
-    },
-    "build": {
-      "name": "build",
-      "description": "Set script for next build",
-      "steps": [
-        {
-          "exec": "yarn --cwd frontend next build"
-        }
-      ]
-    },
-    "export": {
-      "name": "export",
-      "description": "Set script for next export",
-      "steps": [
-        {
-          "exec": "yarn --cwd frontend next export"
         }
       ]
     }

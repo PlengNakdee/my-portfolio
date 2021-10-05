@@ -1,0 +1,69 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/o6SR94yBoNYLJIVfftvG1/_buildManifest.js",
+    "static/o6SR94yBoNYLJIVfftvG1/_ssgManifest.js"
+  ],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/304-44b4d2769e397c5a58c4.js",
+      "static/chunks/pages/index-84be86301145d7927fb8.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/css/048758060fff519c6ee5.css",
+      "static/chunks/pages/_app-a400230146ef709c1791.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/pages/_error-737a04e9a0da63c9d162.js"
+    ],
+    "/contact": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/304-44b4d2769e397c5a58c4.js",
+      "static/chunks/pages/contact-bef4c24e7db9c8593e39.js"
+    ],
+    "/portfolio": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/304-44b4d2769e397c5a58c4.js",
+      "static/chunks/pages/portfolio-bcf494961dc48672af06.js"
+    ],
+    "/portfolio/movie-trailer": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/304-44b4d2769e397c5a58c4.js",
+      "static/chunks/pages/portfolio/movie-trailer-a590be69760e2b062b99.js"
+    ],
+    "/portfolio/this": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/304-44b4d2769e397c5a58c4.js",
+      "static/chunks/pages/portfolio/this-93a76beb211523deb013.js"
+    ],
+    "/resume": [
+      "static/chunks/webpack-1a8a258926ecde76681b.js",
+      "static/chunks/framework-b97a0ed4f13ff8397343.js",
+      "static/chunks/main-8d15616dad332ac01c02.js",
+      "static/chunks/304-44b4d2769e397c5a58c4.js",
+      "static/chunks/pages/resume-6f794bb221e3a3d12ee2.js"
+    ]
+  },
+  "ampFirstPages": []
+}
