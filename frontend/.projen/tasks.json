@@ -34,50 +34,41 @@
     },
     "compile": {
       "name": "compile",
-      "description": "Only compile"
+      "description": "Only compile",
+      "steps": [
+        {
+          "exec": "tsc --build"
+        }
+      ]
     },
     "test:compile": {
       "name": "test:compile",
-      "description": "compiles the test code",
-      "steps": [
-        {
-          "exec": "tsc --noEmit --project tsconfig.jest.json"
-        }
-      ]
+      "description": "compiles the test code"
     },
     "test": {
       "name": "test",
       "description": "Run tests",
       "steps": [
         {
-          "exec": "rm -fr lib/"
-        },
-        {
           "spawn": "test:compile"
-        },
-        {
-          "exec": "jest --passWithNoTests --all --updateSnapshot"
         },
         {
           "spawn": "eslint"
         }
       ]
     },
-    "test:watch": {
-      "name": "test:watch",
-      "description": "Run jest in watch mode",
+    "build": {
+      "name": "build",
+      "description": "Full release build (test+compile)",
       "steps": [
         {
-          "exec": "jest --watch"
-        }
-      ]
-    },
-    "test:update": {
-      "name": "test:update",
-      "description": "Update jest snapshots",
-      "steps": [
+          "spawn": "test"
+        },
         {
-          "exec": "jest --updateSnapshot"
+          "spawn": "compile"
+        },
+        {
+          "exec": "next build"
         }
       ]
     },
@@ -107,7 +98,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk aws-sdk cdk-assume-role-credential-plugin eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-formatting jest jest-extended jest-junit json-schema npm-check-updates ts-jest ts-node typescript @aws-cdk/assert @aws-cdk/aws-iam @aws-cdk/aws-s3-deployment @aws-cdk/aws-s3 @aws-cdk/core next"
+          "exec": "yarn upgrade @types/node @types/react @types/react-dom @types/react-scroll @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import json-schema npm-check-updates typescript @headlessui/react @heroicons/react @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/line-clamp @tailwindcss/typography autoprefixer next postcss react react-dom react-scroll tailwindcss"
         },
         {
           "exec": "npx projen"
@@ -169,70 +160,43 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
-        }
-      ]
-    },
-    "synth": {
-      "name": "synth",
-      "description": "Synthesizes your cdk app into cdk.out (part of \"yarn build\")",
-      "steps": [
-        {
-          "exec": "cdk synth"
-        }
-      ]
-    },
-    "deploy": {
-      "name": "deploy",
-      "description": "Deploys your CDK app to the AWS cloud",
-      "steps": [
-        {
-          "exec": "cdk deploy"
-        }
-      ]
-    },
-    "destroy": {
-      "name": "destroy",
-      "description": "Destroys your cdk app in the AWS cloud",
-      "steps": [
-        {
-          "exec": "cdk destroy"
-        }
-      ]
-    },
-    "diff": {
-      "name": "diff",
-      "description": "Diffs the currently deployed app against your code",
-      "steps": [
-        {
-          "exec": "cdk diff"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern pages test build-tools .projenrc.js"
         }
       ]
     },
     "dev": {
       "name": "dev",
-      "description": "Set script for next build",
+      "description": "Starts the Next.js application in development mode",
       "steps": [
         {
-          "exec": "yarn --cwd frontend next dev"
-        }
-      ]
-    },
-    "build": {
-      "name": "build",
-      "description": "Set script for next build",
-      "steps": [
-        {
-          "exec": "yarn --cwd frontend next build"
+          "exec": "next dev"
         }
       ]
     },
     "export": {
       "name": "export",
-      "description": "Set script for next export",
+      "description": "Exports the application for production deployment",
       "steps": [
         {
-          "exec": "yarn --cwd frontend next export"
+          "exec": "next export"
+        }
+      ]
+    },
+    "server": {
+      "name": "server",
+      "description": "Starts the Next.js application in production mode",
+      "steps": [
+        {
+          "exec": "next start"
+        }
+      ]
+    },
+    "telemetry": {
+      "name": "telemetry",
+      "description": "Checks the status of Next.js telemetry collection",
+      "steps": [
+        {
+          "exec": "next telemetry"
         }
       ]
     }
