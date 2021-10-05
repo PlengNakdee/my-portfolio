@@ -11,10 +11,9 @@ const MovieTrailer = () => {
       </Head>
       <Header />
       <div className="ml-4 mt-24 sm:ml-10 lg:ml-20 flex-grow sm:mr-10 lg:mr-16">
-        <p className="text-6xl mb-6">A Movie Trailer Site</p>
-        <p>text explain website functioanlity</p>
-        <p>frontend</p>
-        <p>backend/aws</p>
+        <p className="text-6xl mb-6">A Movie Trailer Website</p>
+        <p>I'm using Next.js, Taiwind CSS and Sanity.io for this project and then deployed it on Vercel.</p>
+        <p>This website was designed to look like Netflix, but only show trailers from YouTube.</p>
         <div className="mt-4">
           <a href="https://movie-trailer-iota.vercel.app/" target="_blank">
             Website
