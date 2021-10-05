@@ -15,6 +15,7 @@
     "deploy": "npx projen deploy",
     "destroy": "npx projen destroy",
     "diff": "npx projen diff",
+    "dev": "npx projen dev",
     "build": "npx projen build",
     "export": "npx projen export",
     "projen": "npx projen"
@@ -26,7 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "aws-cdk": "1.95.2",
-    "aws-sdk": "^2.999.0",
+    "aws-sdk": "^2.1000.0",
     "cdk-assume-role-credential-plugin": "^1.4.0",
     "eslint": "^7.32.0",
     "eslint-import-resolver-node": "^0.3.6",

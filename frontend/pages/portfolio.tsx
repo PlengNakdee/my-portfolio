@@ -25,7 +25,7 @@ const projects = () => {
             projectName={'a movie trailer site'}
             category={'side project'}
           />
-          <ProjectCard
+          {/* <ProjectCard
             href="/portfolio"
             projectName={'coming soon'}
             category={'side project'}
@@ -39,7 +39,7 @@ const projects = () => {
             href="/portfolio"
             projectName={'coming soon'}
             category={'side project'}
-          />
+          /> */}
         </div>
       </div>
       <Footer />

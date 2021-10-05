@@ -31,6 +31,12 @@ const project = new AwsCdkTypeScriptApp({
   ],
 });
 
+project.removeTask('dev')
+const nextDev = project.addTask('dev', {
+  description: 'Set script for next build',
+});
+nextDev.exec('yarn --cwd frontend next dev');
+
 project.removeTask('build')
 const nextBuild = project.addTask('build', {
   description: 'Set script for next build',
